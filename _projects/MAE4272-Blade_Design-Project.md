@@ -2,24 +2,13 @@
 layout: project
 title: MAE 4272 Blade Design Project
 description: Advanced CAD Project
-technologies: [Autodesk Fusion]
+technologies: [Autodesk Fusion, MATLAB]
 image: assets/images/4272BladeDesignCADRender.png
 ---
 
-This design was...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec accumsan leo. Pellentesque ornare orci enim, vitae vestibulum nibh rutrum in. Donec pharetra risus nec ipsum fringilla, et mattis tortor auctor. Duis tortor ante, posuere ut odio a, scelerisque interdum purus. Aenean faucibus luctus est, sed bibendum tellus. 
 
-Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
+As demand for clean energy grows, we need wind turbines that can reliably generate power under realistic wind conditions. In our project we designed a blade that performs well across a Weibull wind-speed distribution with k = 5 and c = 5, where most usable wind energy occurs around 4–6 m/s.
+To translate that mission into hardware, we used Blade Element Momentum (BEM) theory to model how effective wind velocity, angle of attack, and bending moment change across the length of a blade. We selected a NACA 4412 cross-section for the blade due to its lift-to-drag performance and manufacturability, and used airfoil polar data at Re ≈ 50,000 to choose an operating point of α = 10°. Then we used matlab to break the blade into 20 radial segments. For each segment, we found a pitch value that would get the blade closest to the taget α value. Then we defined constraints on stress, torque, blade rotation rate, and chord length. Starting at a low RPM, the code analyzes whether the design meets the constraints and estimates the power output. This process loops, increasing the rotation rate each time until one of the constraints are no longer met. The geometry determined for the last working RPM value was the geometry that we used for CADing the blade. 
+The three blades were then 3D printed and mounted on a torque break in a wind tunnel for testing. Through testing the tunnel at different torque values and wind speeds, we were able to graph power curves for multiple wind speeds. This helped us form a fit model that finds an optimal rotation rate for a given wind speed. 
+My role on the team was broad, as we all enjoyed playing a role in each part, from design to data analysis. With that being said, I took a lead on designing the wind tunnel testing procedure to ensure that our testing would provide valuable data for informing a suggested operating RPM. 
 
-![Shaded rendering of earlier version]({{ "assets/images/4272BladeDesignCADRender.png" | relative_url }}){: .inline-image-r style="width: 200px"}
-
-Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
-
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
-
-I was inspired by this old radio when I made this rendering:
-
-![Photo of old radio]({{ "/assets/images/old-radio.jpg" | relative_url }}){: .inline-image-l}
-
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
-
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
