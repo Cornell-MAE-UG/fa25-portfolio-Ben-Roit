@@ -3,7 +3,7 @@ layout: project
 title: Boeing 737 Max Ethical Analysis
 description: Identifying the organizational, regulatory, and cultural causes that led to the Boeing 737 Max Incident
 technologies: [Autodesk Fusion, MATLAB]
-image: /assets/images/Boeing737Max.webp
+image: /assets/images/Boeing_737_MAXImage.jpg
 ---
 
 
