@@ -35,8 +35,19 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write
-      id-token: write
+      contents: write
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pages
+          path: ./_site
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
