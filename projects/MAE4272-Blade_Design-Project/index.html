@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAE 4272 Blade Design Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/fa25-portfolio-Ben-Roit/assets/css/main.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark text-white";>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/fa25-portfolio-Ben-Roit/">Ben Roitman Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+          <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="/fa25-portfolio-Ben-Roit/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/fa25-portfolio-Ben-Roit/projects/">Projects</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link " href="/fa25-portfolio-Ben-Roit/cv/">CV</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  
+  <main class="container">
+    <h1>MAE 4272 Blade Design Project</h1>
+
+<p><img src="/fa25-portfolio-Ben-Roit/assets/images/4272BladeDesignCADRender.png" alt="" class="project-image" /></p>
+
+<p>As demand for clean energy grows, we need wind turbines that can reliably generate power under realistic wind conditions. In our project we designed a blade that performs well across a Weibull wind-speed distribution with k = 5 and c = 5, where most usable wind energy occurs around 4–6 m/s.</p>
+
+<p>To translate that mission into hardware, we used Blade Element Momentum (BEM) theory to model how effective wind velocity, angle of attack, and bending moment change across the length of a blade. We selected a NACA 4412 cross-section for the blade due to its lift-to-drag performance and manufacturability, and used airfoil polar data at Re ≈ 50,000 to choose an operating point of α = 10°. Then we used matlab to break the blade into 20 radial segments. For each segment, we found a pitch value that would get the blade closest to the taget α value. Then we defined constraints on stress, torque, blade rotation rate, and chord length. Starting at a low RPM, the code analyzes whether the design meets the constraints and estimates the power output. This process loops, increasing the rotation rate each time until one of the constraints are no longer met. The geometry determined for the last working RPM value was the geometry that we used for CADing the blade.</p>
+
+<p>The three blades were then 3D printed and mounted on a torque break in a wind tunnel for testing. Through testing the tunnel at different torque values and wind speeds, we were able to graph power curves for multiple wind speeds. This helped us form a fit model that finds an optimal rotation rate for a given wind speed. 
+<img src="/fa25-portfolio-Ben-Roit/assets/images/BladeDesign4272PowerCurves.png" alt="Experimental power curves obtained from testing turbine in wind tunnel at various wind speeds" class="project-image" /></p>
+
+<p>My role on the team was broad, as we all enjoyed playing a role in each part, from design to data analysis. With that being said, I took a lead on designing the wind tunnel testing procedure to ensure that our testing would provide valuable data for informing a suggested operating RPM.</p>
+
+
+<p><strong>Technologies Used</strong>: Autodesk Fusion, MATLAB</p>
+
+<a href=/fa25-portfolio-Ben-Roit/projects/ class="back-arrow">
+    <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
+</a>
+
+  </main>
+
+  <footer class="footer navbar-dark text-white text-center";>
+    <div class="container">
+      &copy; 2024 Ben Roitman. All rights not reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
